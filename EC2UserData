@@ -1,0 +1,18 @@
+#!/bin/bash 
+yum update -y #Note: Yum is replaces apt in CentOS and AMI OS 
+yum install -y httpd #Install Apache HyperText Transfer Protocol (HTTP) server program 
+systemctl start httpd #Start httpd service 
+systemctl enable httpd #Enable httpd service at boot time 
+echo "
+<header>
+<hgroup>
+<h1>Local weather news</h1>
+<h2>San Antonio, TX</h2>
+</hgroup>
+</header>
+<main>
+<h1>weather</h1>
+<p>Today will be a high of 85 and a low of 67. Also with a 30% chance of rain, Thursday will be a high of 90 and a low of 70 with clear skies.
+</p>
+<p>Thank you for visiting our website!!!</p>
+" > /var/www/html/index.html #Create HTML file 
